@@ -29,7 +29,7 @@ export default component$(() => {
         )}
         <RouterHead />
       </head>
-      <body lang="ja">
+      <body lang="ja" class="bg-black">
         <RouterOutlet />
         {!isDev && <ServiceWorkerRegister />}
       </body>
