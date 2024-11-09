@@ -13,5 +13,5 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 };
 
 export default component$(() => {
-  return <Slot />;
+  return <div class="bg-black min-h-screen"><Slot /></div>;
 });
