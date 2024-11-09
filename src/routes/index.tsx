@@ -1,7 +1,7 @@
 import type { DocumentHead } from "@builder.io/qwik-city";
 
 import { component$ } from "@builder.io/qwik";
-import { QVideoPlayer } from "~/integrations/react/video-player";
+import { VideoCard } from "~/components/video-card";
 
 export default component$(() => {
   return (
@@ -13,51 +13,22 @@ export default component$(() => {
           <h1 class="text-center text-4xl font-bold text-white">Almighty-K</h1>
           <p class="text-center text-white-secondary">My Piano Performances</p>
         </div>
-        <div class="bg-yellow mx-auto h-1 w-24 rounded-lg" />
+        <div class="mx-auto h-1 w-24 rounded-lg bg-yellow" />
       </div>
 
       <section class="mx-auto grid w-full grid-cols-1 gap-y-5 p-4 md:max-w-[1060px] md:grid-cols-2 md:gap-x-14 md:gap-y-11">
-        <article class="w- flex flex-col gap-5 rounded-md bg-black-secondary px-4 py-5">
-          <QVideoPlayer
-            client:only
-            src="https://www.youtube.com/watch?v=psZIZJfmev8"
-          />
-          <p class="text-lg text-white">ピアノソナタ23番「熱情」3楽章</p>
-          <div class="flex h-10 items-center justify-between">
-            <span class="text-green bg-green/10 inline-block w-28 rounded-md py-2 text-center text-sm">
-              クラシック
-            </span>
-            <div class="text-white-secondary">L.v.Beethoven</div>
-          </div>
-        </article>
-
-        <article class="flex flex-col gap-5 rounded-md bg-black-secondary px-4 py-5">
-          <QVideoPlayer
-            client:only
-            src="https://www.youtube.com/watch?v=psZIZJfmev8"
-          />
-          <p class="text-lg text-white">ピアノソナタ23番「熱情」3楽章</p>
-          <div class="flex h-10 items-center justify-between">
-            <span class="text-green bg-green/10 inline-block w-28 rounded-md py-2 text-center text-sm">
-              クラシック
-            </span>
-            <div class="text-white-secondary">L.v.Beethoven</div>
-          </div>
-        </article>
-
-        <article class="flex flex-col gap-5 rounded-md bg-black-secondary px-4 py-5">
-          <QVideoPlayer
-            client:only
-            src="https://www.youtube.com/watch?v=psZIZJfmev8"
-          />
-          <p class="text-lg text-white">ピアノソナタ23番「熱情」3楽章</p>
-          <div class="flex h-10 items-center justify-between">
-            <span class="text-green bg-green/10 inline-block w-28 rounded-md py-2 text-center text-sm">
-              クラシック
-            </span>
-            <div class="text-white-secondary">L.v.Beethoven</div>
-          </div>
-        </article>
+        <VideoCard
+          src="https://www.youtube.com/watch?v=psZIZJfmev8"
+          title="ピアノソナタ23番「熱情」3楽章"
+          artist="L.v.Beethoven"
+          category="クラシック"
+        />
+        <VideoCard
+          src="https://www.youtube.com/watch?v=X7YI98ruJBk"
+          title="晴る"
+          artist="ヨルシカ"
+          category="アニメ"
+        />
       </section>
     </div>
   );
