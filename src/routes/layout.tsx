@@ -1,5 +1,6 @@
+import type { DocumentHead, RequestHandler } from "@builder.io/qwik-city";
+
 import { component$, Slot } from "@builder.io/qwik";
-import type { RequestHandler } from "@builder.io/qwik-city";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -13,5 +14,19 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 };
 
 export default component$(() => {
-  return <div class="bg-black min-h-screen"><Slot /></div>;
+  return (
+    <div class="min-h-screen bg-black">
+      <Slot />
+    </div>
+  );
 });
+
+export const head: DocumentHead = {
+  title: "Almighty-Kのピアノ演奏動画サイト",
+  meta: [
+    {
+      name: "description",
+      content: "Almighty-Kのピアノ演奏動画サイトです。Qwikで作成しています。",
+    },
+  ],
+};

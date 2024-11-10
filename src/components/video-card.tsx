@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import { QVideoPlayer } from "~/integrations/react/video-player";
 
 type CategoryChipProps = {
-  category: "クラシック" | "アニメ";
+  category: "classic" | "anime";
 };
 
 const CategoryChip = component$<CategoryChipProps>(({ category }) => {
@@ -10,11 +10,11 @@ const CategoryChip = component$<CategoryChipProps>(({ category }) => {
     <span
       class={[
         `inline-block w-28 rounded-md py-2 text-center text-sm`,
-        category === "クラシック" ? "bg-green/10 text-green" : "",
-        category === "アニメ" ? "bg-purple/10 text-purple" : "",
+        category === "classic" ? "bg-green/10 text-green" : "",
+        category === "anime" ? "bg-purple/10 text-purple" : "",
       ].join(" ")}
     >
-      {category}
+      {category === "classic" ? "クラシック" : "アニメ"}
     </span>
   );
 });
@@ -23,7 +23,7 @@ type VideoCardProps = {
   src: string;
   title: string;
   artist: string;
-  category: "クラシック" | "アニメ";
+  category: "classic" | "anime";
 };
 
 export const VideoCard = component$<VideoCardProps>(
