@@ -50,7 +50,7 @@ const Tabs = component$<TabsProps>(({ links }) => {
 export default component$(() => {
   return (
     <div class="flex flex-col gap-7">
-      <header class="h-8 bg-black-secondary" />
+      <header class="sticky top-0 z-10 h-8 bg-black-secondary shadow-md" />
 
       <div class="flex flex-col gap-2">
         <div>
