@@ -8,7 +8,7 @@ import { client } from "~/libs/client";
 import { VideoContentList } from "~/components/content-list";
 import { VideoCard } from "~/components/video-card";
 import { Headline } from "~/components/headline";
-
+import { Header } from "~/components/header";
 export const useVideoContents = routeLoader$(async () => {
   const videos = await client.getList<VideoContent>({
     endpoint: "videos",
@@ -26,10 +26,8 @@ export default component$(() => {
 
   return (
     <div class="flex flex-col gap-7">
-      <header class="sticky top-0 z-10 h-8 bg-black-secondary shadow-md" />
-
+      <Header />
       <Headline title="Almighty-K" subtitle="My Piano Performances" />
-
       <section class="mx-auto flex w-full flex-col gap-5 px-4 md:max-w-[1060px]">
         <LinkTabs links={VIDEO_CATEGORY_LINKS} />
         <VideoContentList>
