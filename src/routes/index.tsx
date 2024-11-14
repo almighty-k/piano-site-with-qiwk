@@ -9,6 +9,7 @@ import { VideoContentList } from "~/components/content-list";
 import { VideoCard } from "~/components/video-card";
 import { Headline } from "~/components/headline";
 import { Header } from "~/components/header";
+
 export const useVideoContents = routeLoader$(async () => {
   const videos = await client.getList<VideoContent>({
     endpoint: "videos",
